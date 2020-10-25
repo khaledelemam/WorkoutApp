@@ -1,7 +1,7 @@
 export const MenuItems = [
   {
     title: 'Home',
-    url: '#',
+    url: './../',
     cName: 'tab-links'
   },
   {
@@ -11,7 +11,7 @@ export const MenuItems = [
   },
   {
     title: 'List',
-    url: '#',
+    url: "./../ExerciseList",
     cName: 'tab-links'
   },
   {
