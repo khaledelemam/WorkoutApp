@@ -1,7 +1,7 @@
 
 import './App.css';
 import Tabs from "./components/Tabs/Tabs"
-import ReactDOM from 'react-dom'
+// import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { far } from '@fortawesome/free-regular-svg-icons'
 
