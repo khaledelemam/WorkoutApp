@@ -1,0 +1,40 @@
+.TabItems {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.tab-logo {
+  color: #000;
+  margin-left: 100px;
+  float: left;
+}
+
+#icon  {
+  color: Black;
+  font-size: 140%;
+  float: right;
+  position: absolute;
+  right: 100px;
+}
+
+#tab ul {
+	margin: 0px;
+	padding: 3px;
+	margin-left: 150px;
+
+}
+
+#tab ul li {
+	margin-right: 8rem;
+	font-weight: 500;
+	list-style: none;
+	text-align: center;
+	display: inline-block;
+}
+
+#tab ul li a {
+  text-decoration: none;
+  color: Black;
+}
