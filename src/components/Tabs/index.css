@@ -7,7 +7,7 @@
 
 .tab-logo {
   color: #000;
-  margin-left: 100px;
+  margin-left: 200px;
   float: left;
 }
 
@@ -16,13 +16,13 @@
   font-size: 140%;
   float: right;
   position: absolute;
-  right: 100px;
+  right: 200px;
 }
 
 #tab ul {
 	margin: 0px;
 	padding: 3px;
-	margin-left: 150px;
+	margin-left: 200px;
 
 }
 
