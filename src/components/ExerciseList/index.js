@@ -7,7 +7,12 @@ class ExerciseList extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      chest: true
+      chest: false,
+      back: false,
+      arms: false,
+      legs: false,
+      core: false,
+
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -36,8 +41,41 @@ class ExerciseList extends React.Component{
             type="checkbox"
             checked={this.state.chest}
             onChange={this.handleInputChange} />
-
           Chest
+        </label>
+        <br></br>
+        <label>
+        <input
+            name="back"
+            type="checkbox"
+            checked={this.state.back}
+            onChange={this.handleInputChange} />
+          Back
+        </label>
+        <br></br>
+        <label>
+        <input
+            name="arms"
+            type="checkbox"
+            checked={this.state.arms}
+            onChange={this.handleInputChange} />
+          Arms
+        </label><br></br>
+        <label>
+        <input
+            name="legs"
+            type="checkbox"
+            checked={this.state.legs}
+            onChange={this.handleInputChange} />
+        Legs
+        </label><br></br>
+        <label>
+        <input
+            name="core"
+            type="checkbox"
+            checked={this.state.core}
+            onChange={this.handleInputChange} />
+          Core
         </label>
       </form>
 
