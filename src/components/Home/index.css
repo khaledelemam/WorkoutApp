@@ -3,10 +3,32 @@
   font-weight: 600;
   font-family: 'Poppins'
 }
-.nice-dates-grid-container{
-  display: block;
-}
 #Calendar{
+  float: left;
   width: 700px;
-  margin-left: 150px;
+  margin-left: 100px;
+}
+
+#progress_bar {
+  margin-left: 80px;
+  float: left;
+  background-color: #ccddff;
+  border-radius: 25px;
+  width: 500px;
+  height: 585px;
+}
+
+#events {
+  margin-left: 50px;
+  float: left;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 350px;
+  height: 585px;
+}
+#title{
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 18px;
 }

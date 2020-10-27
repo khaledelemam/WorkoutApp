@@ -21,6 +21,13 @@ class Home extends React.Component{
             locale={enGB}
           />
         </div>
+        <div id='events'>
+          <p id='title'>Events</p>
+        </div>
+        <div id='progress_bar'>
+          <p id='title'>Progress</p>
+        </div>
+
 
       </div>
     );
