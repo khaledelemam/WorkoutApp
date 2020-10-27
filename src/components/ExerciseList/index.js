@@ -11,6 +11,8 @@ class ExerciseList extends React.Component{
 
   const {checkedA, 
     checkedB, 
+    checkedC,
+    checkedD,
     handleChange} = this.props;
 
 
@@ -28,6 +30,17 @@ class ExerciseList extends React.Component{
         control={<Checkbox checked={checkedB} onChange={handleChange} name="checkedB" />}
         label= 'Back'
       />
+      <br></br>
+      <FormControlLabel className='label'
+        control={<Checkbox checked={checkedC} onChange={handleChange} name="checkedC" />}
+        label= 'Legs'
+      />
+      <br></br>
+      <FormControlLabel className='label'
+        control={<Checkbox checked={checkedD} onChange={handleChange} name="checkedD" />}
+        label= 'Core'
+      />
+
      
     </div>
 
