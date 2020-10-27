@@ -11,7 +11,9 @@ class Tabs extends React.Component {
     return (
       // <div>
       <nav className ="TabItems">
-        <h1 className="tab-logo">Workout</h1>
+        <a href='/'>
+          <h1 className="tab-logo">Workout</h1>
+        </a>
         <div className="menu-icon" ></div>
         <div id="tab">
           <ul>
@@ -20,7 +22,7 @@ class Tabs extends React.Component {
                 <li key={index}>
                   <a  href={item.url}>
                   {item.title}
-                  </a>  
+                  </a>
                 </li>
               )
             })}
@@ -29,7 +31,7 @@ class Tabs extends React.Component {
         <div id="icon">
           <FontAwesomeIcon icon={['far', 'user-circle']} />
         </div>
-      </nav>    
+      </nav>
     )
   }
 }

@@ -1,0 +1,12 @@
+.nice-dates-navigation, .nice-dates-day, .nice-dates-week-header{
+  color: #111;
+  font-weight: 600;
+  font-family: 'Poppins'
+}
+.nice-dates-grid-container{
+  display: block;
+}
+#Calendar{
+  width: 700px;
+  margin-left: 150px;
+}
