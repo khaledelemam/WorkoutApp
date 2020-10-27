@@ -1,6 +1,5 @@
 import React from'react'
 import './App.css';
-import Tabs from "./components/Tabs"
 import Home from "./components/Home"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
