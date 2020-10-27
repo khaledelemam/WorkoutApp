@@ -12,7 +12,7 @@
 #progress_bar {
   margin-left: 80px;
   float: left;
-  background-color: #ccddff;
+  background-color: #e6eeff;
   border-radius: 25px;
   width: 500px;
   height: 585px;
@@ -31,4 +31,12 @@
   font-size: 18px;
   text-align: center;
   padding-top: 18px;
+}
+
+#subtitle{
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 18px;
+  color: #737373;
 }

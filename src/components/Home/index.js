@@ -9,6 +9,9 @@ class Home extends React.Component{
   state = {
   date: new Date(),
   }
+  months =
+  ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
   onChange = date => this.setState({ date })
   render(){
     return(
@@ -23,12 +26,13 @@ class Home extends React.Component{
         </div>
         <div id='events'>
           <p id='title'>Events</p>
+          <p id='subtitle'>
+          {this.months[this.state.date.getMonth()]} {this.state.date.getDate()}
+          </p>
         </div>
         <div id='progress_bar'>
           <p id='title'>Progress</p>
         </div>
-
-
       </div>
     );
   }
