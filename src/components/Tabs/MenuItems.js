@@ -10,7 +10,7 @@ export const MenuItems = [
     cName: 'tab-links'
   },
   {
-    title: 'List',
+    title: 'Exercises',
     url: "./../ExerciseList",
     cName: 'tab-links'
   },
