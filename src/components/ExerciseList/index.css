@@ -1,6 +1,17 @@
+.screen{
+    margin-left: 50px;
+}
+
+.search{
+  padding-bottom: 10px;
+}
+
+.MuiTextField-root{
+    width: 15%;
+  }
 
 
-  .label .MuiFormControlLabel-label{
+.label .MuiFormControlLabel-label{
     font-size: 1.2em;  
   }
 
