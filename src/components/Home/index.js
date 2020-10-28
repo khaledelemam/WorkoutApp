@@ -42,19 +42,19 @@ class Home extends React.Component{
             <p id='progress_bar_title'>
               Some Exercise #1
             </p>
-            <ProgressBar/>
+            <ProgressBar percentage='75'/>
           </div>
           <div>
             <p id='progress_bar_title'>
               Some Exercise #2
             </p>
-            <ProgressBar/>
+            <ProgressBar percentage='30'/>
           </div>
           <div>
             <p id='progress_bar_title'>
               Some Exercise #3
             </p>
-            <ProgressBar/>
+            <ProgressBar percentage='50'/>
           </div>
           <AddButton/>
         </div>

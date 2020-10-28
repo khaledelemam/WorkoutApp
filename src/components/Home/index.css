@@ -8,7 +8,10 @@
 #Calendar{
   float: left;
   width: 700px;
+  height: 400px;
   margin-left: 100px;
+  position: relative;
+  display:block;
 }
 
 #progress_bar {

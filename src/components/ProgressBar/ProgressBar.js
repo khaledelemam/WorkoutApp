@@ -1,14 +1,10 @@
 import React from 'react';
 import './index.css'
-
+import Progress from './Progress.js'
 
 class ProjectBar extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      percentage:50
-    }
+  constructor(percentage) {
+    this.percentage = percentage;
   }
 
   render() {
@@ -20,17 +16,11 @@ class ProjectBar extends React.Component {
   }
 }
 
-const Progress = (props) => {
-  return(
-    <div className="progress">
-    </div>
-  )
-};
 const ProgressBar = (props) => {
   return(
     <div className="progress_bar">
       <Progress percentage ={props.percentage}/>
     </div>
   )
-}
+};
 export default ProgressBar
