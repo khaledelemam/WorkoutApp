@@ -1,0 +1,16 @@
+
+.progress_bar{
+  margin: auto;
+  position:relative;
+  height: 10px;
+  width:300px;
+  border-radius: 25px;
+  background: #b3c6ff;
+  margin-bottom: 40px;
+}
+.progress {
+  background: #3366ff;
+  height: 100%;
+  width: 50%;
+  border-radius: inherit;
+}

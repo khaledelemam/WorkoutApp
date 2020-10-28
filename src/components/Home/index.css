@@ -12,11 +12,11 @@
 }
 
 #progress_bar {
-  margin-left: 80px;
+  margin-left: 100px;
   float: left;
   background-color: #e6eeff;
   border-radius: 25px;
-  width: 500px;
+  width: 450px;
   height: 585px;
   position: relative;
 }
@@ -30,13 +30,26 @@
   height: 585px;
   position: relative;
 }
-#title{
+#events_title{
   font-weight: 500;
   font-size: 18px;
   text-align: center;
   padding-top: 18px;
 }
 
+#progress_title{
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 10%;
+}
+
+#progress_bar_title{
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 17%;
+}
 #subtitle{
   font-weight: 500;
   font-size: 14px;

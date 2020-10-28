@@ -7,6 +7,8 @@ import './index.css'
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import AddButton from "../Buttons/Button.js"
+import ProgressBar from "../ProgressBar/ProgressBar.js"
+
 
 class Home extends React.Component{
   state = {
@@ -28,14 +30,32 @@ class Home extends React.Component{
           />
         </div>
         <div id='events'>
-          <p id='title'>Events</p>
+          <p id='events_title'>Events</p>
           <p id='subtitle'>
           {this.months[this.state.date.getMonth()]} {this.state.date.getDate()}
           </p>
           <AddButton/>
         </div>
         <div id='progress_bar'>
-          <p id='title'>Progress</p>
+          <p id='progress_title'>Progress</p>
+          <div>
+            <p id='progress_bar_title'>
+              Some Exercise #1
+            </p>
+            <ProgressBar/>
+          </div>
+          <div>
+            <p id='progress_bar_title'>
+              Some Exercise #2
+            </p>
+            <ProgressBar/>
+          </div>
+          <div>
+            <p id='progress_bar_title'>
+              Some Exercise #3
+            </p>
+            <ProgressBar/>
+          </div>
           <AddButton/>
         </div>
       </div>
