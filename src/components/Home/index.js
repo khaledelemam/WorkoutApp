@@ -4,6 +4,9 @@ import { enGB } from 'date-fns/locale'
 import { DatePickerCalendar } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
 import './index.css'
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import AddButton from "../Buttons/Button.js"
 
 class Home extends React.Component{
   state = {
@@ -29,9 +32,11 @@ class Home extends React.Component{
           <p id='subtitle'>
           {this.months[this.state.date.getMonth()]} {this.state.date.getDate()}
           </p>
+          <AddButton/>
         </div>
         <div id='progress_bar'>
           <p id='title'>Progress</p>
+          <AddButton/>
         </div>
       </div>
     );
