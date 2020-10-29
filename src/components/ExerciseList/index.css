@@ -1,10 +1,15 @@
 .screen{
     margin-left: 50px;
+    
+  
 }
 
 .search{
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+
 }
+
+
 
 .MuiTextField-root{
     width: 15%;
@@ -14,4 +19,18 @@
 .label .MuiFormControlLabel-label{
     font-size: 1.2em;  
   }
+
+
+  .grids{
+      margin-top: 10px;    
+      
+  }
+  .card{
+    background-color: #e6eeff;
+}
+
+.grid-align{
+    width: 60%;
+}
+
 

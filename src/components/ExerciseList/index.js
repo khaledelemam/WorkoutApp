@@ -7,27 +7,38 @@ import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
+import {
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+  CardActions,
+  Button
+} from "@material-ui/core";
+
 
 
 class ExerciseList extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {checkedA: false, 
+      checkedB: false,
+      checkedC: false,
+      checkedD: false};
+  }
+
+  handleChange(event) {
+
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    this.setState({[name]: value})
+   
+  }
+
   render(){
-
-  const {checkedA, 
-    checkedB, 
-    checkedC,
-    checkedD,
-    handleChange} = this.props;
-
-
-  //   <TextField
-  //   className={classes.margin}
-  //   id="input-with-icon-textfield"
-  //   label="TextField"
-  //   InputProps={{
-  //     startAdornment: (
-  //       <InputAdornment position="start"> <SearchIcon /> </InputAdornment>),
-  //   }}
-  // />
 
     return (
       <div>
@@ -36,40 +47,193 @@ class ExerciseList extends React.Component{
        </div>
        <div className = 'screen'>
       
-        <h1>Exercise List Page</h1>
+        <h2>Exercises List </h2>
+        
+        <Grid item  xs={12}>
         <form  className='search' noValidate autoComplete="off">
-        <TextField className='searchText'id="outlined-basic" label="Search" variant="outlined" InputProps={{
+        <TextField className='searchText'id="outlined-basic" label="Search"  InputProps={{
       endAdornment: (
         <InputAdornment > <SearchIcon /> </InputAdornment>),
     }} />  
+      
         </form>
+      </Grid>
+
+      <Grid container >
+
+      <Grid item xs={3} >
       <FormControlLabel className='label'
-        control={<Checkbox checked={checkedA} onChange={handleChange} name="checkedA"  />}
+        control={<Checkbox checked={this.state.checkedA} onChange={this.handleChange} name="checkedA"  />}
         label="Chest"
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={checkedB} onChange={handleChange} name="checkedB" />}
+        control={<Checkbox checked={this.state.checkedB} onChange={this.handleChange} name="checkedB" />}
         label= 'Back'
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={checkedC} onChange={handleChange} name="checkedC" />}
+        control={<Checkbox checked={this.state.checkedC} onChange={this.handleChange} name="checkedC" />}
         label= 'Legs'
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={checkedD} onChange={handleChange} name="checkedD" />}
+        control={<Checkbox checked={this.state.checkedD} onChange={this.handleChange} name="checkedD" />}
         label= 'Core'
       />
+      </Grid>
+     
+     
+   <Grid className = "grid-align" >
+      {this.state.checkedA &&
+  
+  <Grid item >
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Bench Press
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
 
-   </div>
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Push Ups
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  </Grid>
+ 
+}
+
+
+{this.state.checkedB &&
+  
+    <Grid item >
+      <Grid className = 'grids'>
+        <Card className = 'card' variant="outlined">
+          <CardContent >
+          <Typography variant="h5" component="h2">
+            Barbell Rows
+          </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+    </Grid>
+
+
+    <Grid className = 'grids'>
+        <Card className = 'card' variant="outlined">
+          <CardContent >
+          <Typography variant="h5" component="h2">
+            Pull Ups
+          </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+    </Grid>
+    </Grid>
+ 
+    
+  }
+
+{this.state.checkedC &&
+  
+  <Grid item>
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Squats
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+
+
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Lunges
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  </Grid>
+
+}
+
+{this.state.checkedD &&
+  
+  <Grid item >
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Plank
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+
+
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Crunch
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  </Grid>
+
+  
+}
+</Grid>
+</Grid>
+
+   
+</div>
+
+  
    </div>
       );
     }
 }
 
 export default ExerciseList
+
+
+
 
 
 
