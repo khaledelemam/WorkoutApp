@@ -68,27 +68,27 @@ class ExerciseList extends React.Component{
       <Grid item xs={3} >
 
       <FormControlLabel className='label'
-        control={<Checkbox checked={this.state.checkedAll} onChange={this.handleChange} name="checkedAll" />}
+        control={<Checkbox checked={this.state.checkedAll} onChange={this.handleChange}  color="primary" name="checkedAll" />}
         label= 'Select All'
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={this.state.checkedA} onChange={this.handleChange} name="checkedA"  />}
+        control={<Checkbox checked={this.state.checkedA} onChange={this.handleChange}  color="primary" name="checkedA"  />}
         label="Chest"
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={this.state.checkedB} onChange={this.handleChange} name="checkedB" />}
+        control={<Checkbox checked={this.state.checkedB} onChange={this.handleChange} color="primary"  name="checkedB" />}
         label= 'Back'
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={this.state.checkedC} onChange={this.handleChange} name="checkedC" />}
+        control={<Checkbox checked={this.state.checkedC} onChange={this.handleChange} color="primary"  name="checkedC" />}
         label= 'Legs'
       />
       <br></br>
       <FormControlLabel className='label'
-        control={<Checkbox checked={this.state.checkedD} onChange={this.handleChange} name="checkedD" />}
+        control={<Checkbox checked={this.state.checkedD} onChange={this.handleChange} color="primary" name="checkedD" />}
         label= 'Core'
       />
       </Grid>
