@@ -23,10 +23,11 @@ class ExerciseList extends React.Component{
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.state = {checkedA: false, 
+    this.state = {checkedA:false, 
       checkedB: false,
       checkedC: false,
-      checkedD: false};
+      checkedD: false,
+    checkedAll:true};
   }
 
   handleChange(event) {
@@ -35,6 +36,9 @@ class ExerciseList extends React.Component{
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     this.setState({[name]: value})
+    
+
+
    
   }
 
@@ -62,6 +66,12 @@ class ExerciseList extends React.Component{
       <Grid container >
 
       <Grid item xs={3} >
+
+      <FormControlLabel className='label'
+        control={<Checkbox checked={this.state.checkedAll} onChange={this.handleChange} name="checkedAll" />}
+        label= 'Select All'
+      />
+      <br></br>
       <FormControlLabel className='label'
         control={<Checkbox checked={this.state.checkedA} onChange={this.handleChange} name="checkedA"  />}
         label="Chest"
@@ -83,7 +93,7 @@ class ExerciseList extends React.Component{
       />
       </Grid>
      
-     
+      {!this.state.checkedAll &&
    <Grid className = "grid-align" >
       {this.state.checkedA &&
   
@@ -219,7 +229,135 @@ class ExerciseList extends React.Component{
   
 }
 </Grid>
+  }
+
+
+
+
+<Grid className = "grid-align2" >
+{this.state.checkedAll&&
+  <Grid item >
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Bench Press
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Push Ups
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  
+
+      <Grid className = 'grids'>
+        <Card className = 'card' variant="outlined">
+          <CardContent >
+          <Typography variant="h5" component="h2">
+            Barbell Rows
+          </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+    </Grid>
+
+
+    <Grid className = 'grids'>
+        <Card className = 'card' variant="outlined">
+          <CardContent >
+          <Typography variant="h5" component="h2">
+            Pull Ups
+          </Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+    </Grid>
+  
+ 
+  
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Squats
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+
+
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Lunges
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  
+  
+    <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Plank
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+
+
+  <Grid className = 'grids'>
+      <Card className = 'card' variant="outlined">
+        <CardContent >
+        <Typography variant="h5" component="h2">
+          Crunch
+        </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  </Grid>
+  </Grid>
+
+}
+
+
 </Grid>
+
+ 
+</Grid>
+ 
+
 
    
 </div>
