@@ -92,11 +92,11 @@ class Home extends React.Component{
 function func (date, list, currdate){
   if(formatDate(date)===formatDate(currdate)){
     return list.map((item, index) => (
-      <li key={index}>
-        {
-          item
-        }
-      </li>
+      <List key={index}>
+        <div>
+          {item}
+        </div>
+      </List>
     ))
   };
 }

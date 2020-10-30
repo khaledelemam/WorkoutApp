@@ -10,6 +10,10 @@
   max-height: 100%;
   overflow:auto;
 }
+
+.nice-dates-day.-highlight {
+  color: orange;
+}
 #Calendar{
   float: left;
   width: 700px;
@@ -55,7 +59,7 @@
 
 #progress_bar_title{
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   margin-left: 17%;
 }
 #subtitle{
@@ -64,4 +68,13 @@
   text-align: center;
   padding-top: 18px;
   color: #737373;
+}
+
+#events {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#events div {
+  padding-bottom: 10px;
 }
