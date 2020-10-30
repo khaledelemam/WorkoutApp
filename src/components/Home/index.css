@@ -3,8 +3,13 @@
   font-weight: 600;
   font-family: 'Poppins'
 }
-
-
+.progress_container{
+  height: 340px;
+}
+.MuiList-root{
+  max-height: 100%;
+  overflow:auto;
+}
 #Calendar{
   float: left;
   width: 700px;
