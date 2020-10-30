@@ -7,6 +7,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import ExerciseList from "./components/ExerciseList"
+import Workouts from "./components/Workouts"
 
 library.add(far)
 
@@ -20,6 +21,9 @@ render() {
                         (<Home/>)}/>
         <Route exact path='/ExerciseList' render={() =>
                         (<ExerciseList/>)}/>
+        <Route exact path='/Workouts' render={() =>
+                        (<Workouts/>)}/>
+
       </Switch>
     </BrowserRouter>
   </div>

@@ -6,7 +6,7 @@ export const MenuItems = [
   },
   {
     title: 'Workouts',
-    url: '#',
+    url: './../Workouts',
     cName: 'tab-links'
   },
   {
