@@ -28,9 +28,11 @@ class Tabs extends React.Component {
             })}
           </ul>
         </div>
-        <div id="icon">
-          <FontAwesomeIcon icon={['far', 'user-circle']} />
-        </div>
+          <div id="icon" >
+            <a href= './../Signin'>
+              <FontAwesomeIcon icon={['far', 'user-circle']} />
+            </a>
+          </div>
       </nav>
     )
   }

@@ -1,0 +1,39 @@
+#container {
+  width: 400px;
+  margin: auto;
+}
+#title {
+  margin: auto;
+  padding-top: 100px;
+}
+
+#title h1 {
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Poppins';
+}
+
+#signin_button{
+  padding-top: 30px;
+}
+
+#sign_up_text {
+  padding-top: 12px;
+  margin: auto;
+}
+#sign_up_text a {
+  text-decoration: none;
+}
+#sign_up_text a h2 {
+  text-align: center;
+  font-size: 13px;
+  font-family: 'Poppins';
+}
+
+.MuiInputBase-root {
+  font-size: 15px !important;
+  font-family: 'Poppins' !important;
+}
+.MuiButton-root {
+  font-family: 'Poppins' !important;
+}

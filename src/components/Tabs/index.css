@@ -20,6 +20,10 @@
   right: 50px;
 }
 
+#icon a {
+  color: inherit;
+}
+
 #tab ul {
 	margin: 0px;
 	padding: 3px;

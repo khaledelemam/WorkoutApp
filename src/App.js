@@ -8,6 +8,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import ExerciseList from "./components/ExerciseList"
 import Workouts from "./components/Workouts"
+import Signin from "./components/Signin"
 
 library.add(far)
 
@@ -17,6 +18,8 @@ render() {
     <div>
     <BrowserRouter>
       <Switch>
+        <Route exact path='/Signin' render={() =>
+                      (<Signin/>)}/>
         <Route exact path='/' render={() =>
                         (<Home/>)}/>
         <Route exact path='/ExerciseList' render={() =>
