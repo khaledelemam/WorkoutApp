@@ -8,6 +8,9 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import AddButton from "../Buttons/Button.js"
 import ProgressBar from "../ProgressBar/ProgressBar.js"
+import List from '@material-ui/core/List';
+import Paper from '@material-ui/core/Paper';
+import {EventItems} from "./EventItems"
 
 
 class Home extends React.Component{
@@ -34,27 +37,49 @@ class Home extends React.Component{
           <p id='subtitle'>
           {this.months[this.state.date.getMonth()]} {this.state.date.getDate()}
           </p>
+          <List>
+            <div>
+              <ul>
+                {EventItems.map((item, index) => {
+                  return (
+                    func(item.date, item.events,this.state.date)
+                  )
+                })}
+              </ul>
+            </div>
+          </List>
           <AddButton/>
         </div>
         <div id='progress_bar'>
           <p id='progress_title'>Progress</p>
-          <div>
-            <p id='progress_bar_title'>
-              Some Exercise #1
-            </p>
-            <ProgressBar percentage='75'/>
-          </div>
-          <div>
-            <p id='progress_bar_title'>
-              Some Exercise #2
-            </p>
-            <ProgressBar percentage='30'/>
-          </div>
-          <div>
-            <p id='progress_bar_title'>
-              Some Exercise #3
-            </p>
-            <ProgressBar percentage='50'/>
+          <div className="progress_container">
+            <List>
+              <div>
+                <p id='progress_bar_title'>
+                  Some Exercise #1
+                </p>
+                <ProgressBar percentage='75'/>
+              </div>
+              <div>
+                <p id='progress_bar_title'>
+                  Some Exercise #2
+                </p>
+                <ProgressBar percentage='30'/>
+              </div>
+              <div>
+                <p id='progress_bar_title'>
+                  Some Exercise #3
+                </p>
+                <ProgressBar percentage='50'/>
+              </div>
+              <div>
+                <p id='progress_bar_title'>
+                  Some Exercise #4
+                </p>
+                <ProgressBar percentage='90'/>
+              </div>
+
+            </List>
           </div>
           <AddButton/>
         </div>
@@ -62,6 +87,32 @@ class Home extends React.Component{
     );
   }
 
+}
+
+function func (date, list, currdate){
+  if(formatDate(date)===formatDate(currdate)){
+    return list.map((item, index) => (
+      <List key={index}>
+        <div>
+          {item}
+        </div>
+      </List>
+    ))
+  };
+}
+
+function formatDate(date) {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
 }
 
 export default Home
