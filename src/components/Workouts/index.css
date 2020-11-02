@@ -1,13 +1,20 @@
 
 
-.header1 {
+.view {
     margin-left: 50px;
 }
 
-.header2 {
+
+.gridList {
+    position: relative;
     margin-left: 50px;
+    width: 500px;
+    height: 400px;
 }
 
-Grid {
-    margin-left: 50px;
+
+
+.icon {
+    color: #FFFFFF;
+    /*color: 'rgba(255, 255, 255, 0.54)';*/
 }
