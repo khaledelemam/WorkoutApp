@@ -12,6 +12,13 @@
   float: left;
 }
 
+#signin {
+  float: right;
+  font-weight: 500;
+  position: absolute;
+  right: 120px;
+}
+
 #icon  {
   color: Black;
   font-size: 140%;
