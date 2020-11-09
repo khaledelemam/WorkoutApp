@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
+
 import {
   Grid,
   Typography,
@@ -54,8 +55,7 @@ class ExerciseList extends React.Component{
       this.setState({checkedC:!this.state.checkedC})
       this.setState({checkedD:!this.state.checkedD})
     }
-    
-    
+  
     
   }
 
@@ -86,6 +86,7 @@ class ExerciseList extends React.Component{
       
         </form>
       </Grid>
+
 
       <Grid container >
 
@@ -131,14 +132,16 @@ class ExerciseList extends React.Component{
         Bench Press
         </Typography>
         {this.state.learnButtonBench &&
-          <Typography> Lie on ypur back on a bench with a barbell grasped in both hands. 
+          <Typography> Lie on your back on a bench with a barbell grasped in both hands. 
             Lower the barbell to chest level, then press the barbell upwards, 
             extending the arms until the elbows are locked out.</Typography>
         }
         </CardContent>
         <CardActions>
           <Button size="small"  onClick={this.buttonClick}  value ={this.state.learnButtonBench} name ='learnButtonBench'>Learn More</Button>
+          <Button size="small"  onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
         </CardActions>
+        
       </Card>
   </Grid>
 
@@ -156,6 +159,7 @@ class ExerciseList extends React.Component{
         </CardContent>
         <CardActions>
           <Button size="small" onClick={this.buttonClick} value ={this.state.learnButtonPushups} name ='learnButtonPushups'>Learn More</Button>
+          <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
         </CardActions>
       </Card>
   </Grid>
@@ -184,6 +188,7 @@ class ExerciseList extends React.Component{
           </CardContent>
           <CardActions>
             <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonRows} name ='learnButtonRows'>Learn More</Button>
+            <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
           </CardActions>
         </Card>
     </Grid>
@@ -205,6 +210,7 @@ class ExerciseList extends React.Component{
           </CardContent>
           <CardActions>
             <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonPullups} name ='learnButtonPullups'>Learn More</Button>
+            <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
           </CardActions>
         </Card>
     </Grid>
@@ -232,6 +238,7 @@ class ExerciseList extends React.Component{
         </CardContent>
         <CardActions>
           <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonSquats} name ='learnButtonSquats'>Learn More</Button>
+          <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
         </CardActions>
       </Card>
   </Grid>
@@ -254,6 +261,7 @@ class ExerciseList extends React.Component{
         </CardContent>
         <CardActions>
           <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonLunges} name ='learnButtonLunges'>Learn More</Button>
+          <Button size="small"onClick={() => { alert('Add to custom workout') }} >Add to Workout</Button>
         </CardActions>
       </Card>
   </Grid>
@@ -279,6 +287,7 @@ class ExerciseList extends React.Component{
         </CardContent>
         <CardActions>
           <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonPlank} name ='learnButtonPlank'>Learn More</Button>
+          <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
         </CardActions>
       </Card>
   </Grid>
@@ -298,25 +307,17 @@ class ExerciseList extends React.Component{
         </CardContent>
         <CardActions>
           <Button size="small"onClick={this.buttonClick} value ={this.state.learnButtonCrunch} name ='learnButtonCrunch'>Learn More</Button>
+          <Button size="small" onClick={() => { alert('Add to custom workout') }}>Add to Workout</Button>
         </CardActions>
       </Card>
   </Grid>
   </Grid>
-
-  
 }
 </Grid>
   
-
-
- 
 </Grid>
  
-
-
-   
 </div>
-
   
    </div>
       );
