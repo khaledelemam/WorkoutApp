@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 class Signin extends React.Component{
   state = {
     user: {
-      email:'',
+      username:'',
       password:''
     }
   }
@@ -22,8 +22,7 @@ class Signin extends React.Component{
     })
   }
   render(){
-    const {user :{email, password}} = this.state
-    const HomePage = props => <Link to="/" {...props} />
+    const {user :{username, password}} = this.state
     return(
       <div id='container'>
         <div id='title'>
@@ -35,11 +34,10 @@ class Signin extends React.Component{
             margin='normal'
             required
             fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            onChange = {this.onChange('email')}
-            autoComplete="email"
+            label="Username"
+            name="username"
+            onChange = {this.onChange('username')}
+            autoComplete="username"
             autoFocus
           />
           <TextField
@@ -47,7 +45,6 @@ class Signin extends React.Component{
             margin='normal'
             required
             fullWidth
-            id="password"
             label="Password"
             name="password"
             onChange = {this.onChange('password')}
@@ -59,7 +56,7 @@ class Signin extends React.Component{
               fullWidth
               variant="contained"
               color="primary"
-              component = {HomePage}
+              component = {Link} to= {nice(this.state.user.username, this.state.user.password)}
               >
               Sign In
             </Button>
@@ -78,4 +75,18 @@ class Signin extends React.Component{
   }
 }
 
+function nice (username, password){
+  if(username==='user' && password==='user'){
+    return "/"
+  }
+  else if (username==='admin' && password==='admin') {
+    return "/"
+  }
+  else {
+    return (
+      "/SignIn"
+    )
+  };
+
+}
 export default Signin;
