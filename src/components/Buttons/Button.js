@@ -10,7 +10,7 @@ export default function AddButtons() {
 
   return (
       <div className='fab'>
-        <Fab color="primary" onClick={() => { alert('Add an event/progress.') }}>
+        <Fab color="primary" onClick={() => { console.log("Add event/progress.") }}>
           <AddIcon />
         </Fab>
       </div>
