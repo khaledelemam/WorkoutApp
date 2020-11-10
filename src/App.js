@@ -10,6 +10,8 @@ import ExerciseList from "./components/ExerciseList"
 import Workouts from "./components/Workouts"
 import Friends from "./components/Friends"
 import Signin from "./components/Signin"
+import AdminHome from "./components/AdminHome"
+import AdminWorkouts from "./components/AdminWorkouts"
 
 library.add(far)
 
@@ -19,6 +21,8 @@ render() {
     <div>
     <BrowserRouter>
       <Switch>
+        <Route exact path='/AdminHome' render={() =>
+                      (<AdminHome/>)}/>
         <Route exact path='/' render={() =>
                       (<Signin/>)}/>
         <Route exact path='/Home' render={() =>
@@ -29,6 +33,8 @@ render() {
                         (<Workouts/>)}/>
         <Route exact path='/Friends' render={() =>
                         (<Friends/>)}/>
+        <Route exact path='/AdminWorkouts' render={() =>
+                        (<AdminWorkouts/>)}/>
 
       </Switch>
     </BrowserRouter>

@@ -1,0 +1,52 @@
+.TabItems {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
+
+.tab-logo {
+  color: #000;
+  margin-left: 50px;
+  float: left;
+}
+
+#icon_title {
+  float: right;
+  font-weight: 500;
+  position: absolute;
+  right: 120px;
+}
+
+#icon  {
+  color: Black;
+  font-size: 140%;
+  float: right;
+  position: absolute;
+  right: 50px;
+}
+
+#icon a {
+  color: inherit;
+}
+
+#tab ul {
+	margin: 0px;
+	padding: 3px;
+	margin-left: 150px;
+
+}
+
+#tab ul li {
+	margin-right: 8rem;
+	font-weight: 500;
+	list-style: none;
+	text-align: center;
+	display: inline-block;
+}
+
+#tab ul li a {
+  text-decoration: none;
+  color: Black;
+}
