@@ -9,6 +9,8 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import ExerciseList from "./components/ExerciseList"
 import Workouts from "./components/Workouts"
 import Signin from "./components/Signin"
+import AdminHome from "./components/AdminHome"
+import AdminWorkouts from "./components/AdminWorkouts"
 
 library.add(far)
 
@@ -18,6 +20,8 @@ render() {
     <div>
     <BrowserRouter>
       <Switch>
+        <Route exact path='/AdminHome' render={() =>
+                      (<AdminHome/>)}/>
         <Route exact path='/' render={() =>
                       (<Signin/>)}/>
         <Route exact path='/Home' render={() =>
@@ -26,6 +30,8 @@ render() {
                         (<ExerciseList/>)}/>
         <Route exact path='/Workouts' render={() =>
                         (<Workouts/>)}/>
+        <Route exact path='/AdminWorkouts' render={() =>
+                        (<AdminWorkouts/>)}/>
 
 
       </Switch>

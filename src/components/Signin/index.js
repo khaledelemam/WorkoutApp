@@ -80,7 +80,7 @@ function redirect (username, password){
     return "/Home"
   }
   else if (username==='admin' && password==='admin') {
-    return "/Home"
+    return "/AdminHome"
   }
   else {
     return (

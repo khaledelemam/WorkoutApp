@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from "../Tabs"
+import Tabs from "../AdminTabs"
 import { enGB } from 'date-fns/locale'
 import { DatePickerCalendar } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
