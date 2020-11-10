@@ -55,6 +55,10 @@ For users and admins:
 
 Click on the upper right sign to see your profile.
 
+For admins only:
+
+add/delete users
+
 
 
 
