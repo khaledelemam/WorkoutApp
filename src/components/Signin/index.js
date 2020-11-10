@@ -56,7 +56,7 @@ class Signin extends React.Component{
               fullWidth
               variant="contained"
               color="primary"
-              component = {Link} to= {nice(this.state.user.username, this.state.user.password)}
+              component = {Link} to= {redirect(this.state.user.username, this.state.user.password)}
               >
               Sign In
             </Button>
@@ -75,16 +75,16 @@ class Signin extends React.Component{
   }
 }
 
-function nice (username, password){
+function redirect (username, password){
   if(username==='user' && password==='user'){
-    return "/"
+    return "/Home"
   }
   else if (username==='admin' && password==='admin') {
-    return "/"
+    return "/Home"
   }
   else {
     return (
-      "/SignIn"
+      "/Signin"
     )
   };
 

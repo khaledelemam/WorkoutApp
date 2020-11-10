@@ -4,14 +4,14 @@ import './index.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-class Tabs extends React.Component {
+class StartTabs extends React.Component {
   state = {clicked: false}
 
   render() {
     return (
       // <div>
       <nav className ="TabItems">
-        <a href='/Home'>
+        <a href='/'>
           <h1 className="tab-logo">Workout</h1>
         </a>
         <div className="menu-icon" ></div>
@@ -29,7 +29,7 @@ class Tabs extends React.Component {
           </ul>
         </div>
           <div id="icon" >
-            <a onClick={() => { alert('Redirect to user info.') }}>
+            <a href= './../Signin'>
               <FontAwesomeIcon icon={['far', 'user-circle']} />
             </a>
           </div>
@@ -38,4 +38,4 @@ class Tabs extends React.Component {
   }
 }
 
-export default Tabs
+export default StartTabs

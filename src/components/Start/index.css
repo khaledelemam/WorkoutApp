@@ -1,0 +1,87 @@
+.nice-dates-navigation, .nice-dates-day, .nice-dates-week-header{
+  color: #111;
+  font-weight: 600;
+  font-family: 'Poppins'
+}
+.progress_container{
+  height: 340px;
+}
+.MuiList-root{
+  max-height: 100%;
+  overflow:auto;
+}
+
+.nice-dates-day.-highlight {
+  color: orange;
+}
+
+.fab {
+    float: right;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+};
+#Calendar{
+  float: left;
+  width: 700px;
+  height: 400px;
+  margin-left: 100px;
+  position: relative;
+  display:block;
+}
+
+#progress_bar {
+  margin-left: 100px;
+  float: left;
+  background-color: #e6eeff;
+  border-radius: 25px;
+  width: 450px;
+  height: 585px;
+  position: relative;
+}
+
+#events {
+  margin-left: 50px;
+  float: left;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  width: 350px;
+  height: 585px;
+  position: relative;
+}
+#events_title{
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 18px;
+}
+
+#progress_title{
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 10%;
+}
+
+#progress_bar_title{
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 17%;
+}
+#subtitle{
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  padding-top: 18px;
+  color: #737373;
+}
+
+#events {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#events div {
+  padding-bottom: 10px;
+}
