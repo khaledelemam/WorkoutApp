@@ -98,13 +98,10 @@ class AdminWorkouts extends React.Component {
       <Tabs/>
       <div className = 'view'>
 
-<<<<<<< HEAD
         <h2>Sample Workouts</h2>
  
-=======
-        <h2>Custom Workouts</h2>
 
->>>>>>> bcf88670c70a5458a092cdc58ed91e21bcdbc370
+
         <GridList className = 'gridList' cellHeight={180} cols={3}>
         {workouts.map((tile) => (
           <GridListTile key={tile.img}>
