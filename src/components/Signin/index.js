@@ -84,7 +84,7 @@ function redirect (username, password){
   }
   else {
     return (
-      "/Signin"
+      "/"
     )
   };
 

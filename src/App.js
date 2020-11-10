@@ -9,7 +9,6 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import ExerciseList from "./components/ExerciseList"
 import Workouts from "./components/Workouts"
 import Signin from "./components/Signin"
-import Start from "./components/Start"
 
 library.add(far)
 
@@ -20,8 +19,6 @@ render() {
     <BrowserRouter>
       <Switch>
         <Route exact path='/' render={() =>
-                      (<Start/>)}/>
-        <Route exact path='/Signin' render={() =>
                       (<Signin/>)}/>
         <Route exact path='/Home' render={() =>
                         (<Home/>)}/>
