@@ -1,3 +1,4 @@
+// Copy of Workouts with added functionality for Admins
 import React from 'react';
 import './index.css'
 import Tabs from "../Tabs"
@@ -6,10 +7,9 @@ import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import IconButton from '@material-ui/core/IconButton'
-import InfoIcon from '@material-ui/icons/Info'
 import Button from '@material-ui/core/Button'
-//import DeleteIcon from '@material-ui/icons/Delete'
-
+import InfoIcon from '@material-ui/icons/Info'
+import DeleteIcon from '@material-ui/icons/Delete'
 // Hardcoded values
 import cardio from "../WorkoutPics/cardio.jpg"
 import back from "../WorkoutPics/back.jpg"
@@ -18,7 +18,7 @@ import arm from "../WorkoutPics/arm.jpg"
 import abs from "../WorkoutPics/abs.jpg"
 import dumbbell from "../WorkoutPics/dumbbell.jpg"
 
-const workoutNames = ["Cardio", "Back", "Legs", "Arms"]
+// const workoutNames = ["Cardio", "Back", "Legs", "Arms"]
 
 const workouts = [
   {
@@ -43,7 +43,7 @@ const workouts = [
   }
 ]
   
-const favNames = ["Abs", "Dumbbell"]
+// const favNames = ["Abs", "Dumbbell"]
 
 const favWorkouts = [
   {
@@ -58,13 +58,14 @@ const favWorkouts = [
   }
 ]
 
+// Determines which workout list is needed
 const list = (type) => {
-    if (type === 'custom')
-      return workouts
-    else if (type === 'favor')
-      return favWorkouts
-    else
-      return []
+  if (type === 'custom')
+    return workouts
+  else if (type === 'favor')
+    return favWorkouts
+  else
+    return []
 }
 
 class Workouts extends React.Component {
@@ -77,14 +78,21 @@ class Workouts extends React.Component {
     return(
       <div className = 'workoutInfo'>
         <h2>{workout.title}</h2>
-        Lorem Ipsum
+        Lorem ipsum
+        
         <Button>Add</Button>
+        {/*Admin only privileges*/}
+        <Button>Edit</Button>
+        <IconButton>
+          <DeleteIcon className = 'del'/>
+        </IconButton>
       </div>
     )
   }
 
   render() {
-
+    
+    
     return (
     <div>
       <Tabs/>
@@ -125,7 +133,8 @@ class Workouts extends React.Component {
             <GridListTileBar
               title={tile.title}
               actionIcon = {
-                <IconButton aria-label={`info about ${tile.title}`}onClick={() => {
+                <IconButton aria-label={`info about ${tile.title}`}
+                  onClick={() => {
                     this.setState({
                       index: tile.index,
                       list: 'favor'
@@ -138,10 +147,12 @@ class Workouts extends React.Component {
           </GridListTile>
           ))}
         </GridList>
-      </div>
-      {/* Render selected workout info, and keep track of its list*/}
-      {this.workRender(list(this.state.list)[this.state.index], this.state.list)}
 
+      </div>
+      <div>
+        {/*display selected workout, including info about its list*/}
+        {this.workRender(list(this.state.list)[this.state.index], list(this.state.list))}
+      </div>
     </div>
     ) 
   }

@@ -2,7 +2,6 @@
 
 .view {
     margin-left: 50px;
-    float: left
 }
 
 
@@ -11,15 +10,12 @@
     margin-left: 50px;
     width: 550px;
     height: 400px;
+    float: left;
 }
+
 
 
 .icon {
     color: #FFFFFF;
     /*color: 'rgba(255, 255, 255, 0.54)';*/
-}
-
-.workoutInfo {
-    position: relative;
-    left: 50px;
 }
