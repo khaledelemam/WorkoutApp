@@ -1,7 +1,7 @@
 // Copy of Workouts with added functionality for Admins
 import React from 'react';
 import './index.css'
-import Tabs from "../Tabs"
+import Tabs from "../AdminTabs"
 
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
@@ -42,7 +42,7 @@ const workouts = [
     index: 3,
   }
 ]
-  
+
 // const favNames = ["Abs", "Dumbbell"]
 
 const favWorkouts = [
@@ -68,7 +68,7 @@ const list = (type) => {
     return []
 }
 
-class Workouts extends React.Component {
+class AdminWorkouts extends React.Component {
   state = {
     list: 'custom',
     index: 0
@@ -79,7 +79,7 @@ class Workouts extends React.Component {
       <div className = 'workoutInfo'>
         <h2>{workout.title}</h2>
         Lorem ipsum
-        
+
         <Button>Add</Button>
         {/*Admin only privileges*/}
         <Button>Edit</Button>
@@ -91,15 +91,15 @@ class Workouts extends React.Component {
   }
 
   render() {
-    
-    
+
+
     return (
     <div>
       <Tabs/>
-      <div className = 'view'>  
+      <div className = 'view'>
 
         <h2>Custom Workouts</h2>
- 
+
         <GridList className = 'gridList' cellHeight={180} cols={3}>
         {workouts.map((tile) => (
           <GridListTile key={tile.img}>
@@ -125,7 +125,7 @@ class Workouts extends React.Component {
         <div className = 'header2'>
           <h2>Favourite Workouts</h2>
         </div>
-        
+
         <GridList className = 'gridList' cellHeight={180} cols={3}>
         {favWorkouts.map((tile) => (
           <GridListTile key={tile.img}>
@@ -154,10 +154,10 @@ class Workouts extends React.Component {
         {this.workRender(list(this.state.list)[this.state.index], list(this.state.list))}
       </div>
     </div>
-    ) 
+    )
   }
 
 }
 
 
-export default Workouts
+export default AdminWorkouts

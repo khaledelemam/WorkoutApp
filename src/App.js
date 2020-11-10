@@ -33,6 +33,8 @@ render() {
                         (<Workouts/>)}/>
         <Route exact path='/Friends' render={() =>
                         (<Friends/>)}/>
+        <Route exact path='/AdminWorkouts' render={() =>
+                        (<AdminWorkouts/>)}/>
 
       </Switch>
     </BrowserRouter>
