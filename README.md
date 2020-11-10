@@ -63,9 +63,3 @@ Click on the upper right sign to see your profile.
 
 
 
-=======
-Once signed it, will be redirected to the home page, where you can see a Calendar
-and an event window displaying the events of the current day. You can also click
-on specific dates to see events for that day (i.e. click November 9th). The Progress
-window displays the progress of certain exercises/workouts.
->>>>>>> bcf88670c70a5458a092cdc58ed91e21bcdbc370
