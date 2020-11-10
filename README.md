@@ -8,7 +8,6 @@ npm start
 To sign in:
   Username: user, Password: user OR Username: admin, Password: admin
 
-<<<<<<< HEAD
 P.S If you sign in as a user and want to 'logout' and sign in as admin or vice versa, you have to close and restart npm start.
 
 Home Page:
