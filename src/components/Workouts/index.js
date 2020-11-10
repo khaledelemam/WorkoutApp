@@ -2,13 +2,13 @@ import React from 'react';
 import './index.css'
 import Tabs from "../Tabs"
 
-import {makeStyles} from '@material-ui/core/styles'
-import {Grid, Paper} from '@material-ui/core'
 import GridList from '@material-ui/core/GridList'
 import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import IconButton from '@material-ui/core/IconButton'
 import InfoIcon from '@material-ui/icons/Info'
+import Button from '@material-ui/core/Button'
+//import DeleteIcon from '@material-ui/icons/Delete'
 
 // Hardcoded values
 import cardio from "../WorkoutPics/cardio.jpg"
@@ -18,45 +18,68 @@ import arm from "../WorkoutPics/arm.jpg"
 import abs from "../WorkoutPics/abs.jpg"
 import dumbbell from "../WorkoutPics/dumbbell.jpg"
 
-const workoutNames = ["Cardio", "Back", "Legs", "Arms"]
 
 const workouts = [
   {
     img: cardio,
     title: 'Cardio',
+    index: 0,
   },
   {
     img: back,
     title: 'Back',
+    index: 1,
   },
   {
     img: legs,
     title: 'Legs',
+    index: 2,
   },
   {
     img: arm,
     title: 'Arms',
+    index: 3,
   }
 ]
   
-const favNames = ["Abs", "Dumbbell"]
 
 const favWorkouts = [
   {
     img: abs,
     title: 'Abdominals',
+    index: 0,
   },
   {
     img: dumbbell,
     title: 'Dumbbell',
+    index: 1,
   }
 ]
 
+const list = (type) => {
+    if (type === 'custom')
+      return workouts
+    else if (type === 'favor')
+      return favWorkouts
+    else
+      return []
+}
+
 class Workouts extends React.Component {
   state = {
-    init: ''
+    list: 'custom',
+    index: 0
   }
 
+  workRender(workout, list) {
+    return(
+      <div className = 'workoutInfo'>
+        <h2>{workout.title}</h2>
+        Lorem Ipsum
+        <Button>Add</Button>
+      </div>
+    )
+  }
 
   render() {
 
@@ -74,8 +97,14 @@ class Workouts extends React.Component {
             <GridListTileBar
               title={tile.title}
               actionIcon = {
-                <IconButton aria-label={`info about ${tile.title}`} className = 'icon'>
-                    <InfoIcon />
+                <IconButton aria-label={`info about ${tile.title}`}
+                  onClick={() => {
+                    this.setState({
+                      index: tile.index,
+                      list: 'custom'
+                    })
+                  }}>
+                    <InfoIcon className = 'icon'/>
                 </IconButton>
               }
             />
@@ -94,16 +123,23 @@ class Workouts extends React.Component {
             <GridListTileBar
               title={tile.title}
               actionIcon = {
-                <IconButton aria-label={`info about ${tile.title}`} className = 'icon'>
-                    <InfoIcon />
+                <IconButton aria-label={`info about ${tile.title}`}onClick={() => {
+                    this.setState({
+                      index: tile.index,
+                      list: 'favor'
+                    })
+                  }}>
+                    <InfoIcon className = 'icon'/>
                 </IconButton>
               }
             />
           </GridListTile>
           ))}
         </GridList>
-
       </div>
+      {/* Render selected workout info, and keep track of its list*/}
+      {this.workRender(list(this.state.list)[this.state.index], this.state.list)}
+
     </div>
     ) 
   }

@@ -16,7 +16,7 @@ export const MenuItems = [
   },
   {
     title: 'Friends',
-    url: '#',
+    url: './../Friends',
     cName: 'tab-links'
   }
 ]

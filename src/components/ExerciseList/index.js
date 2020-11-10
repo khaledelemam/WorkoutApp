@@ -19,6 +19,9 @@ import {
 
 
 
+
+
+
 class ExerciseList extends React.Component{
 
   constructor(props) {
@@ -49,7 +52,7 @@ class ExerciseList extends React.Component{
 
     this.setState({[name]: value})
 
-    if ((name == "checkedAll" )) {
+    if ((name === "checkedAll" )) {
       this.setState({checkedA:!this.state.checkedA})
       this.setState({checkedB:!this.state.checkedB})
       this.setState({checkedC:!this.state.checkedC})

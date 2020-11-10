@@ -1,0 +1,26 @@
+.list {
+    margin-left: 50px;
+    margin-top: 20px;
+    float: left;
+}
+
+
+.icon {
+    color: #FFFFFF;
+}
+
+.friendList {
+    height: 100%;
+    width: 150px;
+    
+}
+
+.MuiGridListTile-imgFullWidth {
+    width: 50px;
+
+}
+
+.profile {
+    position: relative;
+    left: 50px;
+}

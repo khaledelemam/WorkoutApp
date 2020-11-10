@@ -1,11 +1,10 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import Container from '@material-ui/core/Container';
 import './index.css'
-import Home from "../Home"
-import { Route, Switch, BrowserRouter} from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
+
 class Signin extends React.Component{
   state = {
     user: {
