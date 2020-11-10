@@ -18,7 +18,6 @@ import arm from "../WorkoutPics/arm.jpg"
 import abs from "../WorkoutPics/abs.jpg"
 import dumbbell from "../WorkoutPics/dumbbell.jpg"
 
-const workoutNames = ["Cardio", "Back", "Legs", "Arms"]
 
 const workouts = [
   {
@@ -43,7 +42,6 @@ const workouts = [
   }
 ]
   
-const favNames = ["Abs", "Dumbbell"]
 
 const favWorkouts = [
   {

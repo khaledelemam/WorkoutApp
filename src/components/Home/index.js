@@ -4,12 +4,9 @@ import { enGB } from 'date-fns/locale'
 import { DatePickerCalendar } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
 import './index.css'
-import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
 import AddButton from "../Buttons/Button.js"
 import ProgressBar from "../ProgressBar/ProgressBar.js"
 import List from '@material-ui/core/List';
-import Paper from '@material-ui/core/Paper';
 import {EventItems} from "./EventItems"
 
 
