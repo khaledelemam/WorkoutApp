@@ -98,7 +98,7 @@ class Workouts extends React.Component {
       <Tabs/>
       <div className = 'view'>  
 
-        <h2>Custom Workouts</h2>
+        <h2>Sample Workouts</h2>
  
         <GridList className = 'gridList' cellHeight={180} cols={3}>
         {workouts.map((tile) => (
@@ -146,6 +146,7 @@ class Workouts extends React.Component {
             />
           </GridListTile>
           ))}
+           <h2>Custom Workouts</h2>
         </GridList>
 
       </div>
@@ -153,6 +154,7 @@ class Workouts extends React.Component {
         {/*display selected workout, including info about its list*/}
         {this.workRender(list(this.state.list)[this.state.index], list(this.state.list))}
       </div>
+      
     </div>
     ) 
   }
