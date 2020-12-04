@@ -10,6 +10,7 @@ import ExerciseList from "./components/ExerciseList"
 import Workouts from "./components/Workouts"
 import Friends from "./components/Friends"
 import Signin from "./components/Signin"
+import Profile from "./components/Profile"
 import AdminHome from "./components/AdminHome"
 import AdminWorkouts from "./components/AdminWorkouts"
 
@@ -35,7 +36,8 @@ render() {
                         (<Friends/>)}/>
         <Route exact path='/AdminWorkouts' render={() =>
                         (<AdminWorkouts/>)}/>
-
+        <Route exact path='/Profile' render={() =>
+                        (<Profile/>)}/>
       </Switch>
     </BrowserRouter>
   </div>
