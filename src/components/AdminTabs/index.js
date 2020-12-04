@@ -29,7 +29,7 @@ class AdminTabs extends React.Component {
           </ul>
         </div>
           <div id="icon" >
-            <a onClick={() => { alert('Redirect to user info.') }}>
+            <a href="./../Profile">
               <FontAwesomeIcon icon={['far', 'user-circle']} />
             </a>
           </div>
