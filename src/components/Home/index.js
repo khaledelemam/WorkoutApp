@@ -5,6 +5,7 @@ import { DatePickerCalendar } from 'react-nice-dates'
 import 'react-nice-dates/build/style.css'
 import './index.css'
 import AddButton from "../Buttons/Button.js"
+import Dialogs from "../Dialog/index.js"
 import ProgressBar from "../ProgressBar/ProgressBar.js"
 import List from '@material-ui/core/List';
 import {EventItems} from "./EventItems"
@@ -78,7 +79,12 @@ class AdminHome extends React.Component{
 
             </List>
           </div>
-          <AddButton/>
+          <div className='fab'>
+            <Fab color="primary" onClick={handleClickOpen}>
+              <AddIcon />
+              <Dialogs/>
+            </Fab>
+          </div>
         </div>
       </div>
     );
