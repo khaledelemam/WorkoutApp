@@ -9,6 +9,8 @@ import Dialogs from "../Dialog/index.js"
 import ProgressBar from "../ProgressBar/ProgressBar.js"
 import List from '@material-ui/core/List';
 import {EventItems} from "./EventItems"
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 
 class AdminHome extends React.Component{
@@ -79,12 +81,7 @@ class AdminHome extends React.Component{
 
             </List>
           </div>
-          <div className='fab'>
-            <Fab color="primary" onClick={handleClickOpen}>
-              <AddIcon />
-              <Dialogs/>
-            </Fab>
-          </div>
+          <AddButton/>
         </div>
       </div>
     );

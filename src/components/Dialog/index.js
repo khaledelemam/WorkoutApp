@@ -5,8 +5,17 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import TextField from '@material-ui/core/TextField';
 
-export default function Dialog() {
+export default function Dialogs() {
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <Dialog
@@ -18,9 +27,20 @@ export default function Dialog() {
       <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          Let Google help apps determine location. This means sending anonymous location data to
-          Google, even when no apps are running.
+        To subscribe to this website, please enter your email address here. We will send updates
+            occasionally.
         </DialogContentText>
+        <TextField
+          variant = 'outlined'
+          margin='normal'
+          required
+          fullWidth
+          label="Username"
+          name="username"
+          onChange = {this.onChange('username')}
+          autoComplete="username"
+          autoFocus
+        />
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color="primary">
