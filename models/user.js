@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+
+
+
 const User = mongoose.model('User', {
 	username: {
 		type: String,
@@ -11,7 +14,7 @@ const User = mongoose.model('User', {
 	password: {
 		type: String,
 		required: true
-	}
+	},
   admin: {
     type: Boolean,
     required: true
@@ -40,6 +43,7 @@ UserSchema.statics.findByUsernamePassword = function(username, password) {
 	return User.findOne({ username: username }).then((user) => {
 		if (!user) {
 			return Promise.reject()
+		}
 		return new Promise((resolve, reject) => {
 			bcrypt.compare(password, user.password, (err, result) => {
 				if (result) {

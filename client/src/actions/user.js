@@ -1,5 +1,8 @@
 // Functions to help with user actions.
 
+import ENV from './../config.js'
+const API_HOST = ENV.api_host
+
 // Send a request to check if a user is logged in through the session cookie
 export const checkSession = (app) => {
     const url = "/users/check-session";
