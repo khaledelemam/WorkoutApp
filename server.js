@@ -11,7 +11,7 @@ const path = require('path');
 // Setting up a static directory for the files in /pub
 // using Express middleware.
 // Don't put anything in /pub that you don't want the public to have access to!
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, '/client/build')))
 
 // Let's make some express 'routes'
 // Express has something called a Router, which
@@ -21,14 +21,26 @@ app.use(express.static(path.join(__dirname, '/public')))
 // Let's make a route for an HTTP GET request to the
 // 'root' of our app (i.e. top level domain '/')
 
-app.get('/', (req, res) => {
-	// sending a string
-	//res.send('This should be the root route!')
+// app.get('/', (req, res) => {
+// 	// sending a string
+// 	//res.send('This should be the root route!')
 
-	//sending some HTML
-	res.sendFile('index.html',{root:__dirname+'/public'});
+// 	//sending some HTML
+// 	res.sendFile('index.html',{root:__dirname+'/client/public'});
 
-})
+// })
+
+app.get("*", (req, res) => {
+    // check for page routes that we expect in the frontend to provide correct status code.
+    const goodPageRoutes = ["/", "/login", "/dashboard"];
+    if (!goodPageRoutes.includes(req.url)) {
+        // if url not in expected page routes, set status to 404.
+        res.status(404);
+    }
+
+    // send index.html
+    res.sendFile(path.join(__dirname, "/client/build/index.html"));
+});
 
 // Error codes
 app.get('/problem', (req, res) => {
