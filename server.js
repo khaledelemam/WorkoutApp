@@ -187,7 +187,7 @@ app.post('/api/workouts', mongoChecker, authenticate, async (req, res) => {
 			res.status(400).send('Bad Request')
 		}
 	}
-}
+});
 // GET all
 app.get('/api/workouts', mongoChecker, authenticate, async (req, res) => {
 
@@ -221,7 +221,7 @@ app.get('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
 		res.status(500).send('Internal Server Error')
 	}
 
-}
+});
 
 /***********************************************/
 
