@@ -221,8 +221,7 @@ app.get('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
 		res.status(500).send('Internal Server Error')
 	}
 
-<<<<<<< HEAD
-}
+});
         
 app.delete('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
     const id = req.params.id
@@ -243,10 +242,8 @@ app.delete('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => 
 		log(error)
 		res.status(500).send('Internal Server Error')
 	}
-}        
-=======
-});
->>>>>>> c90fc14918096463a7c5ff88f66276f72731ca31
+});       
+
 
 /***********************************************/
 
