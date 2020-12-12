@@ -167,6 +167,64 @@ app.get("*", (req, res) => {
 });
 
 /*************************************************/
+
+/*** Workout resource routes **/
+
+app.post('/api/workouts', mongoChecker, authenticate, async (req, res) => {
+	const workout = new Workout({
+		name: req.body.name,
+		exercises: []
+	})
+
+	try {
+		const result = await workout.save()
+		res.send(result)
+	} catch(error) {
+		log(error)
+		if(isMongoError(error)) {
+			res.status(500).send('Internal server error')
+		} else {
+			res.status(400).send('Bad Request')
+		}
+	}
+}
+// GET all
+app.get('/api/workouts', mongoChecker, authenticate, async (req, res) => {
+
+	try {
+		const workouts = await Workout.find({creator: req.user._id})
+		res.send(workouts)
+	} catch(error) {
+		log(error)
+		res.status(500).send("Internal Server Error")
+	}
+})
+
+// GET by ID
+app.get('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
+	const id = req.params.id
+
+	if (!ObjectID.isValid(id)) {
+		res.status(404).send()
+		return;
+	}
+
+	try {
+		const workout = await Workout.findOne({_id: id, creator: req.user._id})
+		if(!workout) {
+			res.status(404).send('Workout not found')
+		} else {
+			res.send(workout)
+		}
+	} catch(error) {
+		log(error)
+		res.status(500).send('Internal Server Error')
+	}
+
+}
+
+/***********************************************/
+
 // Express server listening...
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
