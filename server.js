@@ -187,7 +187,7 @@ app.post('/api/workouts', mongoChecker, authenticate, async (req, res) => {
 			res.status(400).send('Bad Request')
 		}
 	}
-}
+});
 // GET all
 app.get('/api/workouts', mongoChecker, authenticate, async (req, res) => {
 
@@ -221,6 +221,7 @@ app.get('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
 		res.status(500).send('Internal Server Error')
 	}
 
+<<<<<<< HEAD
 }
         
 app.delete('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
@@ -243,6 +244,9 @@ app.delete('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => 
 		res.status(500).send('Internal Server Error')
 	}
 }        
+=======
+});
+>>>>>>> c90fc14918096463a7c5ff88f66276f72731ca31
 
 /***********************************************/
 
