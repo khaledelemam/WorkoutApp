@@ -222,6 +222,27 @@ app.get('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
 	}
 
 }
+        
+app.delete('/api/workouts/:id', mongoChecker, authenticate, async (req, res) => {
+    const id = req.params.id
+    
+    if (!ObjectID.isValid(id)) {
+		res.status(404).send()
+		return;
+	}
+    
+    try {
+		const workout = await Workout.findOneAndRemove({_id: id, creator: req.user._id})
+		if(!workout) {
+			res.status(404).send('Workout not found')
+		} else {
+			res.send(workout)
+		}
+	} catch(error) {
+		log(error)
+		res.status(500).send('Internal Server Error')
+	}
+}        
 
 /***********************************************/
 
