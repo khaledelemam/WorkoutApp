@@ -1,35 +1,108 @@
-/* server.js - Express server*/
-'use strict';
-const log = console.log
-log('Express server')
+/* server.js for react-express-authentication */
+"use strict";
 
-const express = require('express')
+/* Server environment setup */
+// To run in development mode, run normally: node server.js
+// To run in development with the test user logged in the backend, run: TEST_USER_ON=true node server.js
+// To run in production mode, run in terminal: NODE_ENV=production node server.js
+const env = process.env.NODE_ENV // read the environment variable (will be 'production' in production mode)
+
+const USE_TEST_USER = env !== 'production' && process.env.TEST_USER_ON // option to turn on the test user.
+const TEST_USER_ID = '5fb8b011b864666580b4efe3' // the id of our test user (you will have to replace it with a test user that you made). can also put this into a separate configutation file
+const TEST_USER_EMAIL = 'test@user.com'
+//////
+
+const log = console.log;
+const path = require('path')
+
+const express = require("express");
+// starting the express server
 const app = express();
 
-const path = require('path');
+// enable CORS if in development, for React local development server to connect to the web server.
+const cors = require('cors')
+if (env !== 'production') { app.use(cors()) }
 
-// Setting up a static directory for the files in /pub
-// using Express middleware.
-// Don't put anything in /pub that you don't want the public to have access to!
-app.use(express.static(path.join(__dirname, '/client/build')))
+// mongoose and mongo connection
+const { mongoose } = require("./db/mongoose");
+mongoose.set('useFindAndModify', false); // for some deprecation issues
 
-// Let's make some express 'routes'
-// Express has something called a Router, which
-// takes specific HTTP requests and handles them
-// based on the HTTP method and URL
+// import the mongoose models
+const { User } = require("./models/users");
 
-// Let's make a route for an HTTP GET request to the
-// 'root' of our app (i.e. top level domain '/')
+// to validate object IDs
+const { ObjectID } = require("mongodb");
 
-// app.get('/', (req, res) => {
-// 	// sending a string
-// 	//res.send('This should be the root route!')
+// body-parser: middleware for parsing HTTP JSON body into a usable object
+const bodyParser = require("body-parser");
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// 	//sending some HTML
-// 	res.sendFile('index.html',{root:__dirname+'/client/public'});
+// express-session for managing user sessions
+const session = require("express-session");
+const MongoStore = require('connect-mongo')(session) // to store session information on the database in production
 
-// })
 
+function isMongoError(error) { // checks for first error returned by promise rejection if Mongo database suddently disconnects
+    return typeof error === 'object' && error !== null && error.name === "MongoNetworkError"
+}
+
+
+
+// middleware for mongo connection error for routes that need it
+const mongoChecker = (req, res, next) => {
+    // check mongoose connection established.
+    if (mongoose.connection.readyState != 1) {
+        log('Issue with mongoose connection')
+        res.status(500).send('Internal server error')
+        return;
+    } else {
+        next()  
+    }   
+}
+
+// Middleware for authentication of resources
+const authenticate = (req, res, next) => {
+    if (env !== 'production' && USE_TEST_USER)
+        req.session.user = TEST_USER_ID // test user on development. (remember to run `TEST_USER_ON=true node server.js` if you want to use this user.)
+
+    if (req.session.user) {
+        User.findById(req.session.user).then((user) => {
+            if (!user) {
+                return Promise.reject()
+            } else {
+                req.user = user
+                next()
+            }
+        }).catch((error) => {
+            res.status(401).send("Unauthorized")
+        })
+    } else {
+        res.status(401).send("Unauthorized")
+    }
+}
+
+/*** Session handling **************************************/
+// Create a session and session cookie
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET || "our hardcoded secret", // make a SESSION_SECRET environment variable when deploying (for example, on heroku)
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            expires: 60000,
+            httpOnly: true
+        },
+        // store the sessions on the database in production
+        store: env === 'production' ? new MongoStore({ mongooseConnection: mongoose.connection }) : null
+    })
+);
+
+/*** Webpage routes below **********************************/
+// Serve the build
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+// All routes other than above will go to index.html
 app.get("*", (req, res) => {
     // check for page routes that we expect in the frontend to provide correct status code.
     const goodPageRoutes = ["/", "/login", "/dashboard"];
@@ -42,31 +115,10 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
 
-// Error codes
-app.get('/problem', (req, res) => {
-	// You can indicate a status code to send back
-	// by default it is 200, but it's up to you
-	// if you want to send something
-	res.status(500).send('There was a problem on the server')
-
-	// don't send nonsense status codes like this one:
-	//res.status(867).send('There was a problem on the server')
-})
-
-// Sending some JSON
-// app.get('/someJSON', (req, res) => {
-// 	// object converted to JSON string
-// 	res.send({
-// 		name: 'John',
-// 		year: 3,
-// 		courses: ['csc309', 'csc301']
-// 	})
-// })
-
-// will use an 'environmental variable', process.env.PORT, for deployment.
-const port = process.env.PORT || 5000
+/*************************************************/
+// Express server listening...
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
-	log(`Listening on port ${port}...`)
-})  // localhost development port 5000  (http://localhost:5000)
-   // We've bound that port to localhost to go to our express server.
-   // Must restart web server when you make changes to route handlers.
+    log(`Listening on port ${port}...`);
+});
+
